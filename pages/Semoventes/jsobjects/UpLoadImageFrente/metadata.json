@@ -1,0 +1,28 @@
+{
+  "unpublishedCollection": {
+    "name": "UpLoadImageFrente",
+    "pageId": "Semoventes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "data",
+        "value": "{}"
+      },
+      {
+        "name": "url",
+        "value": "\"\""
+      },
+      {
+        "name": "id",
+        "value": "0"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Semoventes_UpLoadImageFrente",
+  "deleted": false,
+  "gitSyncId": "658f335424aefa7382701957_658ff02724aefa7382701983"
+}

@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Dosagem",
+    "pageId": "Prontuário",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Prontuário_Dosagem",
+  "deleted": false,
+  "gitSyncId": "65c281a7ed663e5cca363ff4_65ccf4166665a62d2f6a51f9"
+}

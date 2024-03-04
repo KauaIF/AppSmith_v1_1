@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "calculaDias",
+    "pageId": "Prontuário",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Prontuário_calculaDias",
+  "deleted": false,
+  "gitSyncId": "65c281a7ed663e5cca363ff4_65c68379ed663e5cca36408f"
+}

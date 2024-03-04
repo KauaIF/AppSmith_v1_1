@@ -1,0 +1,6 @@
+{
+	"data": {
+		"Nome": "{{nome_edit.text}}",
+		"Matricula": "{{matricula_edit.text}}"
+	}
+}

@@ -1,0 +1,177 @@
+{
+  "unpublishedPage": {
+    "name": "Prontuário",
+    "slug": "prontuario",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 660,
+          "containerStyle": "none",
+          "snapRows": 58,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 600,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Prontuário_calculaDias.calcula",
+              "name": "calculaDias.calcula",
+              "collectionId": "Prontuário_calculaDias",
+              "clientSideExecution": true,
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "function () {\n  return \"oi\";\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Prontuário_get_animal_tratamento_medico",
+              "name": "get_animal_tratamento_medico",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Prontuário_get_animals_painel",
+              "name": "get_animals_painel",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Prontuário_get_nome_animais",
+              "name": "get_nome_animais",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Prontuário_get_possuis",
+              "name": "get_possuis",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Prontuário_get_doencas",
+              "name": "get_doencas",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Prontuário_get_e_causado",
+              "name": "get_e_causado",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Prontuário_get_medicamento",
+              "name": "get_medicamento",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Prontuário_get_medicamento_of_tratamento",
+              "name": "get_medicamento_of_tratamento",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Prontuário_mapeaDoenca.myFun1",
+              "name": "mapeaDoenca.myFun1",
+              "collectionId": "Prontuário_mapeaDoenca",
+              "clientSideExecution": true,
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "function () {\n  const tratamentosMedicosPorId = get_animal_tratamento_medico.data.data.reduce((acc, item) => {\n    acc[item.id] = item;\n    return acc;\n  }, {});\n  const nomesDasDoencas = [];\n  get_e_causado.data.data.forEach(item => {\n    const tratamentoMedico = tratamentosMedicosPorId[item.tratamento_medico.id];\n    if (tratamentoMedico) {\n      const nomeDaDoenca = item.doenca.nome;\n      nomesDasDoencas.push(nomeDaDoenca);\n    }\n  });\n  return nomesDasDoencas;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Prontuário_Dosagem.combinarTratamentoEDosagem",
+              "name": "Dosagem.combinarTratamentoEDosagem",
+              "collectionId": "Prontuário_Dosagem",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "function () {\n  const tratamentos = get_animal_tratamento_medico.data.data || [];\n  const dosagens = get_possuis.data.data || [];\n  const tratamentosPorId = tratamentos.reduce((map, tratamento) => {\n    map[tratamento.id] = tratamento;\n    return map;\n  }, {});\n  dosagens.forEach(dosagem => {\n    const tratamentoId = dosagem.tratamento_medico.id;\n    const tratamento = tratamentosPorId[tratamentoId];\n    if (tratamento) {\n      if (!tratamento.dosagens) {\n        tratamento.dosagens = [];\n      }\n      tratamento.dosagens.push({\n        id: dosagem.id,\n        prescricao: dosagem.prescricao,\n        dosagem: dosagem.dosagem\n      });\n    }\n  });\n  return tratamentos;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Prontuário",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "65840affee8e4a451ee14f66_658c8df1b958b305ad022a1b"
+}

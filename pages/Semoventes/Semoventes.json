@@ -1,0 +1,115 @@
+{
+  "unpublishedPage": {
+    "name": "Semoventes",
+    "slug": "semoventes",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 660,
+          "containerStyle": "none",
+          "snapRows": 58,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 600,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Semoventes_getDefaultValue.getDefaultValue",
+              "name": "getDefaultValue.getDefaultValue",
+              "collectionId": "Semoventes_getDefaultValue",
+              "clientSideExecution": true,
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "function (nome, data) {\n  let nomeValue = nome;\n  let selectedValue = \"\";\n  if (nomeValue) {\n    nomeValue = nomeValue?.toLowerCase();\n    for (const elemento of data) {\n      if (elemento?.Nome) if (elemento?.Nome.toLowerCase() === nomeValue) {\n        selectedValue = elemento;\n      }\n    }\n    if (selectedValue) {\n      return {\n        label: selectedValue.Nome,\n        value: selectedValue.id\n      };\n    }\n  }\n  return selectedValue;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Semoventes_get_name_estatistica",
+              "name": "get_name_estatistica",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Semoventes_get_all_animals_someventes",
+              "name": "get_all_animals_someventes",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Semoventes_get_animals_painel",
+              "name": "get_animals_painel",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Semoventes_get_condutor",
+              "name": "get_condutor",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Semoventes_get_unidades",
+              "name": "get_unidades",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "LinkUrl.url_api",
+                "appsmith.store.jwt"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Semoventes",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "65840affee8e4a451ee14f66_658c4e65b958b305ad022a05"
+}

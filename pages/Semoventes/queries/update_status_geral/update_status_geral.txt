@@ -1,0 +1,6 @@
+{
+	"data": {
+		"Status_geral" : "Desativado",
+		"Justificativa_baixado" :{{Justificativa_baixado.text}}
+	}
+}

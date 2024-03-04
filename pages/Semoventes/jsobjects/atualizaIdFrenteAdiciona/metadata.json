@@ -1,0 +1,28 @@
+{
+  "unpublishedCollection": {
+    "name": "atualizaIdFrenteAdiciona",
+    "pageId": "Semoventes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "idFrente",
+        "value": "\"\""
+      },
+      {
+        "name": "idEsquerda",
+        "value": "\"\""
+      },
+      {
+        "name": "idDireita",
+        "value": "\"\""
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "Semoventes_atualizaIdFrenteAdiciona",
+  "deleted": false,
+  "gitSyncId": "65b42e3df901ed0ce6ebf61f_65bc7a42d38a3727fb1e8b3b"
+}

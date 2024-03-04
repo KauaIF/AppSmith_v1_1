@@ -1,0 +1,7 @@
+{
+	"data": {
+		"Nome": "{{add_nome.text}}",
+		"Matricula": {{add_matricula.text}},
+		"ativo": "true"
+	}
+}

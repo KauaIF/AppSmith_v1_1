@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "mapeaDoenca",
+    "pageId": "Prontuário",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Prontuário_mapeaDoenca",
+  "deleted": false,
+  "gitSyncId": "65c281a7ed663e5cca363ff4_65c6796eed663e5cca36407e"
+}

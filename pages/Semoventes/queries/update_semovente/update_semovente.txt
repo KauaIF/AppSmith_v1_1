@@ -1,0 +1,18 @@
+{
+	"data": {
+		"Nome": {{NomeUpdate.text}},
+		"Status_operacional" : {{Status_operacionalUpdate.selectedOptionValue}},
+		"Status_saude" : {{Status_medicacaoUpdate.selectedOptionValue}},
+		"Sexo" : {{SexoUpdate.selectedOptionValue}},
+		"Data_nascimento" : {{ Data_NascimentoUpdate.selectedDate}},
+		"Racao_Diaria" : {{ RacaoUpdate.text}},
+		"Box" : {{ BoxUpdate.text}},
+		"Alocacao" : {{ UnidadeUpdate.selectedOptionValue}},
+		"Condutor_principal" : {{Condutor_principalUpdate.selectedOptionValue}},
+		"Condutor_secundario" : {{ Condutor_secundarioUpdate.selectedOptionValue}},
+		"Foto_frente" : {{parseInt(FotoIdFrente1.text)}},
+		"Foto_esquerda" : {{parseInt(FotoIdEsquerda1.text)}},
+		"Foto_direita" : {{parseInt(FotoIdDireita1.text)}}
+
+	}
+}

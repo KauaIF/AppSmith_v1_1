@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Desabilitar_botoes",
+    "pageId": "Semoventes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Semoventes_Desabilitar_botoes",
+  "deleted": false,
+  "gitSyncId": "65e0b123793e6c5e1b77c0a8_65e0c578793e6c5e1b77c15f"
+}
